@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1600</width>
-    <height>1072</height>
+    <height>1036</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>860</y>
+      <y>500</y>
       <width>691</width>
-      <height>91</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -42,9 +42,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>520</y>
-      <width>691</width>
-      <height>341</height>
+      <y>540</y>
+      <width>821</width>
+      <height>431</height>
      </rect>
     </property>
     <property name="font">
@@ -86,10 +86,10 @@
    <widget class="QWidget" name="mplWidget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>910</x>
-      <y>0</y>
-      <width>650</width>
-      <height>500</height>
+      <x>850</x>
+      <y>120</y>
+      <width>731</width>
+      <height>851</height>
      </rect>
     </property>
     <property name="font">
@@ -109,7 +109,7 @@
      <rect>
       <x>10</x>
       <y>240</y>
-      <width>901</width>
+      <width>751</width>
       <height>221</height>
      </rect>
     </property>
@@ -843,27 +843,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="mplWidget_3" native="true">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>570</y>
-      <width>651</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Copperplate Gothic Bold</family>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::NoContextMenu</enum>
-    </property>
-   </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
@@ -918,7 +897,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_4">
+          <widget class="QRadioButton" name="belin">
            <property name="font">
             <font>
              <family>Copperplate Gothic Bold</family>
@@ -936,7 +915,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="kuzgtu">
            <property name="font">
             <font>
              <family>Copperplate Gothic Bold</family>
@@ -974,7 +953,7 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QCheckBox" name="checkBox_3">
+            <widget class="QCheckBox" name="checkTime">
              <property name="font">
               <font>
                <family>Copperplate Gothic Bold</family>
@@ -982,6 +961,9 @@
                <weight>50</weight>
                <bold>false</bold>
               </font>
+             </property>
+             <property name="mouseTracking">
+              <bool>false</bool>
              </property>
              <property name="contextMenuPolicy">
               <enum>Qt::NoContextMenu</enum>
@@ -993,7 +975,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox">
+            <widget class="QCheckBox" name="holod">
              <property name="font">
               <font>
                <family>Copperplate Gothic Bold</family>
@@ -1011,7 +993,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox_4">
+            <widget class="QCheckBox" name="otkl_v_min">
              <property name="font">
               <font>
                <family>Copperplate Gothic Bold</family>
@@ -1074,7 +1056,7 @@
             <number>3</number>
            </property>
            <property name="maximum">
-            <number>10</number>
+            <number>10000</number>
            </property>
            <property name="value">
             <number>5</number>
@@ -1117,10 +1099,10 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="minimum">
-            <number>3</number>
+            <number>5</number>
            </property>
            <property name="maximum">
-            <number>5</number>
+            <number>10000</number>
            </property>
           </widget>
          </item>
@@ -1151,10 +1133,10 @@
    <widget class="QLabel" name="montecarlo">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>950</y>
+      <x>370</x>
+      <y>460</y>
       <width>621</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -1172,13 +1154,33 @@
      <string/>
     </property>
    </widget>
+   <widget class="QCheckBox" name="memtext">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>90</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Убрать 
+подписи 
+времени</string>
+    </property>
+   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>500</y>
+      <x>800</x>
+      <y>20</y>
       <width>791</width>
-      <height>72</height>
+      <height>88</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -1213,7 +1215,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>проверка на частоту неправильной отработки (на 100 случаев)</string>
+        <string>проверка на частоту неправильной отработки (на 1000 случаев)</string>
        </property>
       </widget>
      </item>

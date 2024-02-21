@@ -268,7 +268,6 @@ def wels_delay(vrub,eshup,custom,delayL,NR,NW,oran,yell,re,bly,gren,korich,user,
                 dsi=True
                 dsp_vr=True
                 dsp_esh=True
-                #проверить и лучше подогнать цифры
                 devskv=['0','25',"50","75","100","125","150","175","200","225","250","300","350","400","450","500", '750','1000']
                 stdevskv=[0,3.4,4.8,7.2,9.6,12,14.4,16.8,19.2,21.6,24,28.8,33.6,38.5,12.9,35.6,60.9]
                 dictskv={}

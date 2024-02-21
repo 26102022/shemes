@@ -7,9 +7,11 @@ import matplotlib.colors
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg, NavigationToolbar2QT as NavigationToolbar
 from collections import Counter
 import numpy as np
-
 import random
+import math 
+import matplotlib as mpl
 
+mpl.rcParams['axes.linewidth'] = 0.1
 
 def main():
     qt_creator_file = "mainwindow.ui"
@@ -19,7 +21,7 @@ def main():
         def __init__(self):
             super(MainWindow, self).__init__()
             self.setupUi(self)
-            self.sc = MplCanvas(self, width=15, height=15, dpi=100)             
+            self.sc = MplCanvas(self)             
             toolbar = NavigationToolbar(self.sc, self)
             self.sc2 = MplCanvas1(self)             
             toolbar2 = NavigationToolbar(self.sc2, self)
@@ -33,9 +35,9 @@ def main():
             self.lay2.addWidget(toolbar2)
             self.lay2.addWidget(self.sc2)  
             
-            self.lay3 = QtWidgets.QVBoxLayout(self.mplWidget_3)
-            self.lay3.addWidget(toolbar3)
-            self.lay3.addWidget(self.sc3)  
+            #self.lay2 = QtWidgets.QVBoxLayout(self.mplWidget_3)
+            self.lay2.addWidget(toolbar3)
+            self.lay2.addWidget(self.sc3)  
               
             self.addButton.clicked.connect(self.the_button_was_clicked)
 
@@ -44,30 +46,35 @@ def main():
             self.sc2.axes.cla()
             self.sc3.axes.cla()
             histo(self)
-            self.dumai.setChecked(False)
+            #self.dumai.setChecked(False)
 
 
     class MplCanvas(FigureCanvasQTAgg):                                 # !!! +++
-        def __init__(self, parent=None, width=15, height=15, dpi = 100):
-            fig = Figure(figsize=(width, height), dpi=dpi)
+        def __init__(self, parent=None):
+            fig = Figure()
             self.axes = fig.add_subplot(111)
             super(MplCanvas, self).__init__(fig)
     class MplCanvas1(FigureCanvasQTAgg):                                 # !!! +++
         def __init__(self, parent=None ):
-            fig = Figure(figsize=(100,100))
+            fig = Figure()
             self.axes = fig.add_subplot(111)
+            
             super(MplCanvas1, self).__init__(fig)    
     class MplCanvas2(FigureCanvasQTAgg):                                 # !!! +++
         def __init__(self, parent=None ):
-            fig = Figure(figsize=(100,100))
-            self.axes = fig.add_subplot(111)
+            fig = Figure(figsize=(10,10))
+            
+
+            self.axes = fig.add_subplot(211)
             super(MplCanvas2, self).__init__(fig)    
+           
 
     
     def histo(self):
         #функция в функции
+        self.pred = False
         vr= self.vrub.currentText()
-        esh= self.esh.currentText()
+        esh=self.esh.currentText()
         insk= self.inskv.currentText()
         rows = self.rows.value()
         wels = self.wels.value()
@@ -75,7 +82,7 @@ def main():
         
         if self.poty.isChecked()==True:
             devskv=['0','25',"50","75","100","125","150","175","200","225","250","300","350","400","450","500","750",'1000']
-            stdevskv=[0,2,2.5,3.5,3.5,4,4.5,5.5,6,6,6.5,7.5,8.5,9.5,10.5,10.5,10.5,10.5]
+            stdevskv=[0,2,2.5,3.5,3.5,4,4.5,5.5,6,6,6.3,6.3,6.3,6.3,6.3,10.5,12.4,18.5]
             dictskv={}
             for i in range(len(devskv)):
                 dictskv[devskv[i]]=stdevskv[i]
@@ -89,13 +96,85 @@ def main():
             self.sig_esh.setText(str(dictsp[str(esh)])) 
             self.mid_esh.setText(str(esh))
             self.sig_in.setText(str(dictskv[str(insk)]))
+            self.mid_in.setText(str(insk))  
+        if self.belin.isChecked()==True:
+            dictsp={}
+            dictskv={}
+            
+            devskv=['0','25',"50","75","100","125","150","175","200","225","250","300","350","400","450","500", '750','1000']
+            stdevskv=[0,6.8,9.7,10.6,11.5,12.4,13.3,14.2,15.1,16.0,16.9,18.7,20.5,22.3,24.1,25.7,43.1,111.9]
+            devsp=['0','17',"25","42","67","109","176"]
+            stdevsp=[0,8.5,6.8,10.8,9.5,13.3,19.28]
+            meanlistskv=[0,29.6,57.6854076,86.5281114,115.3708152,144.213519,173.0562228,201.8989266,230.7416304,259.5843342,288.427038,346.1124456,403.7978532,461.4832608,519.1686684,539,822.15,1105.3]
+            meanlist=[0,22.6,29.6,51.4,76.1,119.7,202.4]
+            if self.checkTime.isChecked() ==True:
+                for i in range(len(stdevskv)):
+                    stdevskv[i]=2*stdevskv[i]
+                for i in range(len(stdevsp)):
+                    stdevsp[i]=2*stdevsp[i]
+                    
+            if self.holod.isChecked() ==True:
+                for i in range(len(stdevskv)):
+                    stdevskv[i]=2*stdevskv[i]
+                for i in range(len(stdevsp)):
+                    stdevsp[i]=2*stdevsp[i]
+                    
+            if self.otkl_v_min.isChecked() ==True:
+                for i in range(len(meanlistskv)):
+                    meanlistskv[i]=float(devskv[i])-(meanlistskv[i]-float(devskv[i]))
+                for i in range(len(meanlist)):
+                    meanlist[i]=float(devsp[i])-(meanlist[i]-float(devsp[i]))
+                    
+            for i in range(len(devskv)):
+                dictskv[devskv[i]]=round(stdevskv[i]/6,1)
+            for i in range(len(devsp)):
+                dictsp[devsp[i]]=round(stdevsp[i]/6,1)
+
+
+            meand={}
+            for i in range(len(devskv)):
+                meand[devskv[i]]=round(meanlistskv[i],1)
+            for i in range(len(devsp)):
+                meand[devsp[i]]=round(meanlist[i],1)
+            
+                
+            self.sig_vr.setText(str(dictsp[vr]))
+            self.sig_esh.setText(str(dictsp[esh])) 
+            self.sig_in.setText(str(dictskv[insk]))
+            vr=meand[vr]
+            esh=meand[esh]
+            insk=meand[insk]
+            self.mid_vr.setText(str(vr))
+            self.mid_esh.setText(str(esh))
             self.mid_in.setText(str(insk))
+        if self.kuzgtu.isChecked()==True:
+            vr= float(self.vrub.currentText())
+            esh= float(self.esh.currentText())
+            insk= float(self.inskv.currentText())
+            s_vr=0.01*vr*(3.97*math.exp(-0.008*vr)+2)
+            s_esh=0.01*esh*(3.97*math.exp(-0.008*esh)+2)
+            s_insk=0.01*insk*(3.97*math.exp(-0.008*insk)+2)
+            self.sig_vr.setText(str(round(s_vr,2)))
+            self.mid_vr.setText(str(vr))
+            self.sig_esh.setText(str(round(s_esh,2))) 
+            self.mid_esh.setText(str(esh))
+            self.sig_in.setText(str(round(s_insk,2)))
+            self.mid_in.setText(str(insk))
+           
+        
+        
+        
         if self.zheskyi.isChecked()==True:
             sg_e= float(self.sig_esh.text())
             mid_esh=float(self.mid_esh.text())
             sig_in= float(self.sig_in.text())
             mid_in= float(self.mid_in.text())
             sg_vr= float(self.sig_vr.text())
+        
+        
+        
+        
+        
         mid_vr= float(self.mid_vr.text())
         sg_e= float(self.sig_esh.text())
         mid_esh=float(self.mid_esh.text())
@@ -222,44 +301,55 @@ def main():
             minus.reverse()
 
             return minus,rowes
-        minus,rowes = memblecs(self)    
+        minus,rowes = memblecs(self)  
+        self.minus=minus
         self.sc2.axes.cla()
         self.sc2.axes.matshow(rowes, cmap = matplotlib.colors.ListedColormap(['g', 'b', 'y', 'r', 'maroon']))
-        for (i, j), z in np.ndenumerate(rowes):
-            self.sc2.axes.text(j, i, '{:0.1f}'.format(z), ha='center', va='center',
-                    bbox=dict(boxstyle='round', facecolor='white', edgecolor='0.3'))
-        self.sc2.draw()
-
-
-
+        
         self.sc3.axes.cla()
         self.sc3.axes.matshow(minus, cmap = matplotlib.colors.ListedColormap(['g', 'b', 'y', 'r', 'maroon']))
-        for (i, j), z in np.ndenumerate(minus):
-            self.sc3.axes.text(j, i, '{:0.1f}'.format(z), ha='center', va='center',
-                    bbox=dict(boxstyle='round', facecolor='white', edgecolor='0.3'))
-            
+        if (wels > 10 and rows > 10) and self.pred==False:
+            self.memtext.setChecked(True)
+            self.pred = not self.pred
+      
+        if self.memtext.isChecked()==False:
+            for (i, j), z in np.ndenumerate(rowes):
+                self.sc2.axes.text(j, i, '{:0.1f}'.format(z), ha='center', va='center',
+                        bbox=dict(boxstyle='round', facecolor='white', edgecolor='0.3'))
+            for (i, j), z in np.ndenumerate(minus):
+                self.sc3.axes.text(j, i, '{:0.1f}'.format(z), ha='center', va='center',
+                        bbox=dict(boxstyle='round', facecolor='white', edgecolor='0.3'))
+                
+        self.sc2.draw()
+
         self.sc3.draw()
+
+
         count=False
         ccc=0
+        scolp=0
         if self.dumai.isChecked() == True:
             if tr2 > 0:
-                for monte in range(1000):
+                for monte in range(10**3):
                     minus,rowes=memblecs(self)
                     for i in range(rows):
                         for j in range(wels):
+                            scolp=scolp+1
                             if minus[i][j] <=0 and (i!=0 and j !=0):
                                 count=True
-                                break
                                 
-                    if count == True:
-                        ccc=ccc+1        
-                        
+                            if count == True:
+                                ccc=ccc+1  
+                          
+                print(scolp)           
+                print(ccc)           
+                self.montecarlo.setText("Вероятность того, что хотя бы одна скважина отработает раньше\n(на 1000 случаев) = "+str(100*round(ccc/scolp,2))+" %")
             else:
                 self.sc3.axes.cla()
+                self.montecarlo.setText("Вероятность того, что хотя бы одна скважина отработает раньше\n(на 1000 случаев) = 0 %")
                 
                 count = 0
     
-            self.montecarlo.setText("Процент  отработки скважины раньше срока\n(на 100 случаев) = "+str(ccc/10)+" %")
  
  
  
