@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1321</width>
-    <height>419</height>
+    <width>1436</width>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,6 +24,24 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="10" column="3">
+     <widget class="QLineEdit" name="mid_esh">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
     <item row="13" column="0" rowspan="4" colspan="4">
      <widget class="QWidget" name="mplWidget" native="true">
       <property name="font">
@@ -42,7 +60,7 @@
       </property>
      </widget>
     </item>
-    <item row="15" column="7" rowspan="2">
+    <item row="15" column="4" rowspan="2" colspan="5">
      <widget class="QWidget" name="mplWidget_3" native="true">
       <property name="tabletTracking">
        <bool>false</bool>
@@ -52,8 +70,8 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QRadioButton" name="zheskyi">
+    <item row="5" column="4" rowspan="10" colspan="6">
+     <widget class="QWidget" name="mplWidget_2" native="true">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -62,29 +80,53 @@
         <bold>false</bold>
        </font>
       </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="text">
-       <string>Ввести свои значения</string>
+      <property name="autoFillBackground">
+       <bool>true</bool>
       </property>
+      <widget class="QLabel" name="montecarlo">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>790</y>
+         <width>964</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
     </item>
-    <item row="10" column="2">
-     <widget class="QLineEdit" name="mid_vr">
+    <item row="2" column="2">
+     <widget class="QLabel" name="label">
       <property name="font">
        <font>
-        <family>Copperplate Gothic Bold</family>
         <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
        </font>
       </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
       <property name="text">
-       <string>0</string>
+       <string>Вид интерполяции</string>
       </property>
      </widget>
     </item>
@@ -106,8 +148,21 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_9">
+    <item row="12" column="0">
+     <widget class="QPushButton" name="disctB">
+      <property name="font">
+       <font>
+        <family>MS Reference Sans Serif</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Распределение замедлений</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="3">
+     <widget class="QLineEdit" name="sig_esh">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -115,244 +170,77 @@
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QRadioButton" name="zheskyi">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>Ввести свои значения</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QCheckBox" name="checkTime">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
       </property>
       <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="acceptDrops">
-       <bool>false</bool>
-      </property>
-      <property name="toolTip">
-       <string notr="true"/>
-      </property>
-      <property name="statusTip">
-       <string notr="true"/>
-      </property>
-      <property name="whatsThis">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Выбор статистических данных</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QSpinBox" name="wels">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>10000</number>
-      </property>
-      <property name="value">
-       <number>10</number>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QSpinBox" name="rows">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="minimum">
-       <number>3</number>
-      </property>
-      <property name="maximum">
-       <number>10000</number>
-      </property>
-      <property name="value">
-       <number>5</number>
-      </property>
-      <property name="displayIntegerBase">
-       <number>10</number>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="label_7">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string>Число скважин в ряду</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Вид интерполяции</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QRadioButton" name="poty">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string>По ТУ НСИ &quot;Искра&quot;</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Цветовая схема</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QComboBox" name="cmap">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="label_3">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="text">
-       <string>Внутрискважинное
-замедление</string>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::AutoText</enum>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1">
-     <widget class="QLineEdit" name="mid_in">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="2">
-     <widget class="QLineEdit" name="sig_vr">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QCheckBox" name="holod">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
+       <enum>Qt::TabFocus</enum>
       </property>
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
       <property name="toolTip">
-       <string>Удваивает среднеквадратическое отклонение при отрицательной температуре</string>
+       <string>Удваивает среднеквадратическое отклонение при сроке хранения детонаторов &gt;0,5 лет</string>
       </property>
       <property name="toolTipDuration">
        <number>-1</number>
       </property>
       <property name="whatsThis">
-       <string>Удваивает среднеквадратичные отклонения</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Удваивает среднеквадратичные отклонения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="text">
-       <string>Учет температуры</string>
+       <string>Учет времени хранения</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Число вариации
+ для гистограмм</string>
       </property>
      </widget>
     </item>
@@ -463,8 +351,17 @@
       </item>
      </widget>
     </item>
-    <item row="9" column="2">
-     <widget class="QComboBox" name="vrub">
+    <item row="6" column="2">
+     <widget class="QComboBox" name="cmap">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_35">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -476,42 +373,302 @@
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="currentIndex">
-       <number>3</number>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Среднее значение</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLineEdit" name="mid_in">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Внутрискважинное
+замедление</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3" rowspan="3">
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QCheckBox" name="holod">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string>Удваивает среднеквадратическое отклонение при отрицательной температуре</string>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="whatsThis">
+       <string>Удваивает среднеквадратичные отклонения</string>
+      </property>
+      <property name="text">
+       <string>Учет температуры</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>Число скважин в ряду</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1" colspan="3">
+     <widget class="QPushButton" name="addButton">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>Построить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QLineEdit" name="mid_vr">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QCheckBox" name="no_miss">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>Без учета ошибки</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Среднеквадратичное отклонение  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Цветовая схема</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QRadioButton" name="poty">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="text">
+       <string>По ТУ НСИ &quot;Искра&quot;</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="toolTip">
+       <string notr="true"/>
+      </property>
+      <property name="statusTip">
+       <string notr="true"/>
+      </property>
+      <property name="whatsThis">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Выбор статистических данных</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLineEdit" name="dolg_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>100000</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4" colspan="4">
+     <widget class="QComboBox" name="sc3type">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="currentText">
+       <string>Количество скважин отработавших раньше времени</string>
       </property>
       <item>
        <property name="text">
-        <string>0</string>
+        <string>Количество скважин отработавших раньше времени</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>17</string>
+        <string>Разница между временем срабатывания соседних скважин</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>25</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>42</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>67</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>109</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>176</string>
+        <string>Окно времени</string>
        </property>
       </item>
      </widget>
@@ -569,66 +726,6 @@
       </item>
      </widget>
     </item>
-    <item row="11" column="3">
-     <widget class="QLineEdit" name="sig_esh">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="label_35">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="text">
-       <string>Среднее значение</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="label_16">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="text">
-       <string>Выбор замедления</string>
-      </property>
-     </widget>
-    </item>
     <item row="11" column="1">
      <widget class="QLineEdit" name="sig_in">
       <property name="font">
@@ -647,8 +744,8 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="3">
-     <widget class="QLabel" name="label_40">
+    <item row="8" column="2">
+     <widget class="QLabel" name="label_12">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -660,12 +757,18 @@
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
       <property name="text">
        <string>Замедление между
-скважинами в ряду</string>
+ рядами (вруб)</string>
       </property>
       <property name="textFormat">
        <enum>Qt::AutoText</enum>
@@ -678,8 +781,8 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="3">
-     <widget class="QLineEdit" name="mid_esh">
+    <item row="6" column="1">
+     <widget class="QSpinBox" name="rows">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -691,50 +794,29 @@
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="text">
-       <string>0</string>
+      <property name="minimum">
+       <number>3</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>5</number>
+      </property>
+      <property name="displayIntegerBase">
+       <number>10</number>
       </property>
      </widget>
     </item>
-    <item row="11" column="0">
-     <widget class="QLabel" name="label_11">
+    <item row="7" column="1">
+     <widget class="QCheckBox" name="memtext">
       <property name="font">
        <font>
-        <family>Copperplate Gothic Bold</family>
         <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
        </font>
       </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Среднеквадратичное отклонение  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QCheckBox" name="ininsk">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string>Учесть внутрискважинное замедление</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
+       <string>Убрать подписи времени</string>
       </property>
      </widget>
     </item>
@@ -852,8 +934,20 @@
       </item>
      </widget>
     </item>
-    <item row="7" column="2">
-     <widget class="QCheckBox" name="no_miss">
+    <item row="4" column="8">
+     <widget class="QLineEdit" name="time_step">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>20</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="2">
+     <widget class="QLineEdit" name="sig_vr">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -866,12 +960,24 @@
        <enum>Qt::NoContextMenu</enum>
       </property>
       <property name="text">
-       <string>Без учета ошибки</string>
+       <string>0</string>
       </property>
      </widget>
     </item>
-    <item row="8" column="2">
-     <widget class="QLabel" name="label_12">
+    <item row="2" column="8">
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Шаг времени</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QComboBox" name="vrub">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -883,18 +989,89 @@
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>17</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>25</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>42</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>67</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>109</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>176</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QSpinBox" name="wels">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>10</number>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="3">
+     <widget class="QLabel" name="label_40">
+      <property name="font">
+       <font>
+        <family>Copperplate Gothic Bold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
       <property name="text">
        <string>Замедление между
- рядами (вруб)</string>
+скважинами в ряду</string>
       </property>
       <property name="textFormat">
        <enum>Qt::AutoText</enum>
@@ -907,8 +1084,8 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QCheckBox" name="checkTime">
+    <item row="8" column="0">
+     <widget class="QCheckBox" name="ininsk">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -917,71 +1094,15 @@
         <bold>false</bold>
        </font>
       </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::TabFocus</enum>
-      </property>
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="toolTip">
-       <string>Удваивает среднеквадратическое отклонение при сроке хранения детонаторов &gt;0,5 лет</string>
-      </property>
-      <property name="toolTipDuration">
-       <number>-1</number>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Удваивает среднеквадратичные отклонения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <property name="text">
-       <string>Учет времени хранения</string>
+       <string>Учесть внутрискважинное замедление</string>
       </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QCheckBox" name="memtext">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+      <property name="checked">
+       <bool>true</bool>
       </property>
-      <property name="text">
-       <string>Убрать подписи времени</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="4" colspan="4">
-     <widget class="QComboBox" name="sc3type">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="currentText">
-       <string/>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Окно времени</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Разница между временем срабатывания соседних скважин</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Количество скважин отработавших раньше времени</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item row="4" column="4" colspan="4">
@@ -1018,8 +1139,8 @@
       </property>
      </widget>
     </item>
-    <item row="12" column="1" colspan="3">
-     <widget class="QPushButton" name="addButton">
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_16">
       <property name="font">
        <font>
         <family>Copperplate Gothic Bold</family>
@@ -1031,137 +1152,11 @@
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="text">
-       <string>Построить</string>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="0">
-     <widget class="QPushButton" name="disctB">
-      <property name="font">
-       <font>
-        <family>MS Reference Sans Serif</family>
-        <pointsize>12</pointsize>
-       </font>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="text">
-       <string>Распределение замедлений</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="4" rowspan="10" colspan="6">
-     <widget class="QWidget" name="mplWidget_2" native="true">
-      <property name="font">
-       <font>
-        <family>Copperplate Gothic Bold</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="autoFillBackground">
-       <bool>true</bool>
-      </property>
-      <widget class="QLabel" name="montecarlo">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>790</y>
-         <width>964</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Comic Sans MS</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="wordWrap">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-    </item>
-    <item row="5" column="3" rowspan="3">
-     <widget class="QLabel" name="label_5">
-      <property name="font">
-       <font>
-        <family>Comic Sans MS</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QLabel" name="label_4">
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Число вариации
- для гистограмм</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QLineEdit" name="dolg_2">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>100000</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="8">
-     <widget class="QLabel" name="label_8">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Шаг времени</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="8">
-     <widget class="QLineEdit" name="time_step">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>20</string>
+       <string>Выбор замедления</string>
       </property>
      </widget>
     </item>
@@ -1172,7 +1167,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1321</width>
+     <width>1436</width>
      <height>21</height>
     </rect>
    </property>
@@ -1198,7 +1193,14 @@
     <addaction name="savee"/>
     <addaction name="menu_2"/>
    </widget>
+   <widget class="QMenu" name="test">
+    <property name="title">
+     <string>Проверка на подбой</string>
+    </property>
+    <addaction name="a_test"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="test"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="savee">
@@ -1244,6 +1246,11 @@
   <action name="dolg">
    <property name="text">
     <string>Для гистограмм замедлений</string>
+   </property>
+  </action>
+  <action name="a_test">
+   <property name="text">
+    <string>Задать данные и проверить</string>
    </property>
   </action>
  </widget>
